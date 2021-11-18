@@ -1,0 +1,137 @@
+window.onload = () => {
+  console.log("test");
+  let num_1;
+  let num_2;
+  let num_3;
+  let num_4;
+  let num_5;
+  let num_6;
+  let num_7;
+  let num_8;
+  let num_9;
+  let num_0;
+
+  let operator;
+  let result;
+  let button_1 = document.getElementById("button 1");
+  let button_2 = document.getElementById("button 2");
+  let button_3 = document.getElementById("button 3");
+  let button_4 = document.getElementById("button 4");
+  let button_5 = document.getElementById("button 5");
+  let button_6 = document.getElementById("button 6");
+  let button_7 = document.getElementById("button 7");
+  let button_8 = document.getElementById("button 8");
+  let button_9 = document.getElementById("button 9");
+  let button_0 = document.getElementById("button 0");
+
+  let button_add = document.getElementById("button add");
+  let button_sub = document.getElementById("button sub");
+  let button_mul = document.getElementById("button mul");
+  let button_div = document.getElementById("button div");
+  let button_mod = document.getElementById("button mod");
+  let button_equalTo = document.getElementById("button_equalTo");
+
+  let input_box = document.getElementById("my-input-box");
+
+  button_1.addEventListener("click", (eventObject) => {
+    num_1 = parseInt(button_1.value);
+    input_box.value = num_1;
+    console.log("num", num_1);
+  });
+
+  button_2.addEventListener("click", () => {
+    num_2 = parseInt(button_2.value);
+    input_box.value = num_2;
+    console.log("num", num_2);
+  });
+
+  button_3.addEventListener("click", () => {
+    num_3 = parseInt(button_3.value);
+    input_box.value = num_3;
+    console.log("num", num_3);
+  });
+
+  button_4.addEventListener("click", () => {
+    num_4 = parseInt(button_4.value);
+    input_box.value = num_4;
+    console.log("num", num_4);
+  });
+
+  button_5.addEventListener("click", () => {
+    num_5 = parseInt(button_5.value);
+    input_box.value = num_5;
+    console.log("num", num_5);
+  });
+
+  button_6.addEventListener("click", () => {
+    num_6 = parseInt(button_6.value);
+    input_box.value = num_6;
+    console.log("num", num_6);
+  });
+
+  button_7.addEventListener("click", () => {
+    num_7 = parseInt(button_7.value);
+    input_box.value = num_7;
+    console.log("num", num_7);
+  });
+
+  button_8.addEventListener("click", () => {
+    num_8 = parseInt(button_8.value);
+    input_box.value = num_8;
+    console.log("num", num_8);
+  });
+
+  button_9.addEventListener("click", () => {
+    num_9 = parseInt(button_9.value);
+    input_box.value = num_9;
+    console.log("num", num_9);
+  });
+
+  button_0.addEventListener("click", () => {
+    num_0 = parseInt(button_0.value);
+    input_box.value = num_0;
+    console.log("num", num_0);
+  });
+
+  button_add.addEventListener("click", () => {
+    operator = button_add.value;
+    input_box.value = operator;
+    console.log("operator", operator);
+  });
+
+  button_sub.addEventListener("click", () => {
+    operator = button_sub.value;
+    input_box.value = operator;
+    console.log("operator", operator);
+  });
+
+  button_mul.addEventListener("click", () => {
+    operator = button_mul.value;
+    input_box.value = operator;
+    console.log("operator", operator);
+  });
+
+  button_div.addEventListener("click", () => {
+    operator = button_div.value;
+    input_box.value = operator;
+    console.log("operator", operator);
+  });
+
+  button_mod.addEventListener("click", () => {
+    operator = button_mod.value;
+    input_box.value = operator;
+    console.log("operator", operator);
+  });
+
+  button_equalTo.addEventListener("click", () => {
+    console.log("= clicked");
+    performed_calculation(num_1, num_2, operator);
+  });
+
+  function performed_calculation(num_1, num_2, operator) {
+    result = eval("num_1 + operator + num_2");
+    result = eval(result);
+    console.log("eval res", result);
+    input_box.value = result;
+  }
+};

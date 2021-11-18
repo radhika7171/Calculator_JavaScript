@@ -6,34 +6,37 @@
   </head>
   <body>
     <h1>Calculator</h1>
-    <input type="text" id="my-input-box" />
+    <input type="text" id="inputBox" />
     <div class="flex-container">
       <div>
-        <input type="button" id="button 1" value="1">
-        <input type="button" id="button 2" value="2">
-        <input type="button" id="button 3" value="3">
-        <input type="button" id="button add" value="+">
+        <input type="button" id="button 1" class ="operand" value="1">
+        <input type="button" id="button 2" class = "operand" value="2">
+        <input type="button" id="button 3" class = "operand" value="3">
+        <input type="button" id="button add" class = "operator" value="+">
       </div>
 
     <div>
-        <input type="button" id="button 4" value="4">
-        <input type="button" id="button 5" value="5">
-        <input type="button" id="button 6" value="6">
-        <input type="button" id="button mul" value="*">
+        <input type="button" id="button 4" class ="operand" value="4">
+        <input type="button" id="button 5" class ="operand" value="5">
+        <input type="button" id="button 6" class ="operand" value="6">
+        <input type="button" id="button mul" class = "operator" value="*">
     </div>
 
     <div>
-        <input type="button" id="button 7" value="7">
-        <input type="button" id="button 8" value="8">
-        <input type="button" id="button 9" value="9">
-        <input type="button" id="button sub" value="-">
+        <input type="button" id="button 7" class ="operand" value="7">
+        <input type="button" id="button 8" class ="operand" value="8">
+        <input type="button" id="button 9" class ="operand" value="9">
+        <input type="button" id="button sub" class = "operator" value="-">
     </div>
 
     <div>
-        <input type="button" id="button 0" value="0">
-        <input type="button" id="button div" value="/">
-        <input type="button" id="button mod" value="%">
-        <input type="button" id="button_equalTo" value="=">
+        <input type="button" id="button 0" class ="operand" value="0">
+        <input type="button" id="button div" class ="operator" value="/">
+        <input type="button" id="button mod" class ="operator" value="%">
+
+        <input type="button" id="clear" class ="clear" value="clr">
+
+        <input type="button" id="equalTo" class ="equal" value="=">
       </div>  
     </div>
   </body>
