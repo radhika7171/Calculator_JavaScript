@@ -1,6 +1,6 @@
 var operand1;
 var operand2;
-let operator = "";
+let operator;
 
 window.onload = () => {
   var operandElements = document.getElementsByClassName("operand");
@@ -19,14 +19,12 @@ window.onload = () => {
 function addOperandEventListeners(collection) {
   for (let element of collection) {
     element.addEventListener("click", (event) => {
-      if (operator == "") {
+      if (operator === null) {
         inputBox.value += event.target.value;
-        operand1 = inputBox.value;
-        console.log("operand1", operand1);
+        operand1 = parseInt(inputBox.value);
       } else {
         inputBox.value += event.target.value;
-        operand2 = inputBox.value;
-        console.log("operand2", operand2);
+        operand2 = parseInt(inputBox.value);
       }
     });
   }
@@ -36,9 +34,7 @@ function addOperatorEventListeners(collection) {
   for (let element of collection) {
     element.addEventListener("click", (event) => {
       operator = event.target.value;
-      console.log("operator", operator);
       inputBox.value = operator;
-      console.log("input", inputBox.value);
       inputBox.value = "";
     });
   }
@@ -47,13 +43,30 @@ function addOperatorEventListeners(collection) {
 function addClearEventListener(clearElement) {
   console.log("clear =>", clearElement);
   clearElement.addEventListener("click", (event) => {
-    console.log("target =>", event.target.value);
+    operand1 = null;
+    operand2 = null;
+    operator = null;
+    inputBox.value = "";
   });
 }
 
 function addEqualToEventListener(equalToElement) {
-  console.log("clear =>", equalToElement);
   equalToElement.addEventListener("click", (event) => {
-    console.log("target =>", event.target.value);
+    if (!operand1 || !operator || !operand2) {
+      alert("Not a valid operation!");
+    } else {
+      inputBox.value = (function () {
+        switch (operator) {
+          case "+":
+            return operand1 + operand2;
+          case "-":
+            return operand1 - operand2;
+          case "*":
+            return operand1 * operand2;
+          case "/":
+            return operand1 / operand2;
+        }
+      })();
+    }
   });
 }
