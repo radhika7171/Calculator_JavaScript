@@ -1,6 +1,6 @@
-var operand1;
-var operand2;
-let operator;
+let operand1 = null;
+let operand2 = null;
+let operator = null;
 
 window.onload = () => {
   var operandElements = document.getElementsByClassName("operand");
@@ -23,6 +23,9 @@ function addOperandEventListeners(collection) {
         inputBox.value += event.target.value;
         operand1 = parseInt(inputBox.value);
       } else {
+        if (Number.isNaN(parseInt(inputBox.value))) {
+          inputBox.value = "";
+        }
         inputBox.value += event.target.value;
         operand2 = parseInt(inputBox.value);
       }
@@ -35,13 +38,11 @@ function addOperatorEventListeners(collection) {
     element.addEventListener("click", (event) => {
       operator = event.target.value;
       inputBox.value = operator;
-      inputBox.value = "";
     });
   }
 }
 
 function addClearEventListener(clearElement) {
-  console.log("clear =>", clearElement);
   clearElement.addEventListener("click", (event) => {
     operand1 = null;
     operand2 = null;
@@ -52,10 +53,14 @@ function addClearEventListener(clearElement) {
 
 function addEqualToEventListener(equalToElement) {
   equalToElement.addEventListener("click", (event) => {
+    console.log("op1", operand1);
+    console.log("op2 =>", operand2);
+    console.log("oper =>", operator);
+    console.log("condition", !operand1 || !operand2 || !operand2);
     if (!operand1 || !operator || !operand2) {
       alert("Not a valid operation!");
     } else {
-      inputBox.value = (function () {
+      result = (function () {
         switch (operator) {
           case "+":
             return operand1 + operand2;
@@ -65,8 +70,15 @@ function addEqualToEventListener(equalToElement) {
             return operand1 * operand2;
           case "/":
             return operand1 / operand2;
+          case "%":
+            return operand1 % operand2;
         }
       })();
+      inputBox.value = result;
+      operand1 = result;
+      operator = null;
+      operand2 = null;
+      console.log("result", result);
     }
   });
 }

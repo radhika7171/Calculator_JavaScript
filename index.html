@@ -6,38 +6,44 @@
   </head>
   <body>
     <h1>Calculator</h1>
-    <input type="text" id="inputBox" />
     <div class="flex-container">
+
+    <div>
+    <input type="text" size="30 px" class = "display" id="inputBox" >
+    </div>
+
       <div>
-        <input type="button" id="button 1" class ="operand" value="1">
-        <input type="button" id="button 2" class = "operand" value="2">
-        <input type="button" id="button 3" class = "operand" value="3">
-        <input type="button" id="button add" class = "operator" value="+">
+        <input type="button" id="button 1" class ="common-button-class operand" value="1">
+        <input type="button" id="button 2" class = "common-button-class operand" value="2">
+        <input type="button" id="button 3" class = "common-button-class operand" value="3">
+        <input type="button" id="button add" class = "common-button-class operator" value="+">
       </div>
 
     <div>
-        <input type="button" id="button 4" class ="operand" value="4">
-        <input type="button" id="button 5" class ="operand" value="5">
-        <input type="button" id="button 6" class ="operand" value="6">
-        <input type="button" id="button mul" class = "operator" value="*">
+        <input type="button" id="button 4" class ="common-button-class operand" value="4">
+        <input type="button" id="button 5" class ="common-button-class operand" value="5">
+        <input type="button" id="button 6" class ="common-button-class operand" value="6">
+        <input type="button" id="button mul" class = "common-button-class operator" value="*">
     </div>
 
     <div>
-        <input type="button" id="button 7" class ="operand" value="7">
-        <input type="button" id="button 8" class ="operand" value="8">
-        <input type="button" id="button 9" class ="operand" value="9">
-        <input type="button" id="button sub" class = "operator" value="-">
+        <input type="button" id="button 7" class ="common-button-class operand" value="7">
+        <input type="button" id="button 8" class ="common-button-class operand" value="8">
+        <input type="button" id="button 9" class ="common-button-class operand" value="9">
+        <input type="button" id="button sub" class = "common-button-class operator" value="-">
     </div>
 
     <div>
-        <input type="button" id="button 0" class ="operand" value="0">
-        <input type="button" id="button div" class ="operator" value="/">
-        <input type="button" id="button mod" class ="operator" value="%">
+        <input type="button" id="button 0" class ="specialButton common-button-class operand" value="0">
+        <input type="button" id="button mod" class ="common-button-class operator" value="%">
+        <input type="button" id="button div" class ="common-button-class operator" value="/">
+    </div>  
+      
+    <div>
+      <input type="button" id="clear" class ="specialButton common-button-class clear" value="CLR">
+      <input type="button" id="equalTo" class ="specialButton common-button-class equal" value="=">
+    </div>
 
-        <input type="button" id="clear" class ="clear" value="clr">
-
-        <input type="button" id="equalTo" class ="equal" value="=">
-      </div>  
     </div>
   </body>
 </html>
